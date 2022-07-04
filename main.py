@@ -9,8 +9,10 @@ for i in range(10):
     out = names.get_full_name()
     name.append(out)
 
+nums = np.random.randint(10, 100,10, dtype=int)
+
 df = pd.DataFrame({'Name':name,
-                   'Marks':np.random.randint(10, 100, dtype=int)})
+                   'Marks':nums})
 
 writer = ExcelWriter('output_file.xlsx')
 df.to_excel(writer,'Sheet1',index=False)
